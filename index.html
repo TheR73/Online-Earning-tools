@@ -16,14 +16,12 @@
     background-size: cover;
     color: #fff;
   }
-
   .overlay {
     background: rgba(0,0,0,0.75);
     min-height: 100vh;
     padding: 40px 20px;
     box-sizing: border-box;
   }
-
   header {
     text-align: center;
     margin-bottom: 40px;
@@ -36,7 +34,6 @@
     font-size: 1.2rem;
     color: #ddd;
   }
-
   .card-container {
     display: flex;
     flex-wrap: wrap;
@@ -45,7 +42,6 @@
     max-width: 1100px;
     margin: 0 auto 40px;
   }
-
   .card {
     background: #1e1e1ecc;
     width: 220px;
@@ -56,18 +52,15 @@
     cursor: pointer;
     transition: transform 0.25s ease, box-shadow 0.25s ease;
   }
-
   .card:hover {
     transform: translateY(-10px);
     box-shadow: 0 0 20px #00aaff;
   }
-
   .card h3 {
     margin: 0 0 15px;
     font-size: 1.4rem;
     color: #00aaff;
   }
-
   .card button {
     background-color: #00aaff;
     border: none;
@@ -78,48 +71,56 @@
     cursor: pointer;
     transition: background-color 0.3s ease;
   }
-
   .card button:hover {
     background-color: #008ecc;
   }
-
-  #iframe-container {
+  /* Fullscreen iframe page */
+  #tool-view {
+    display: none;
+    min-height: 100vh;
+    padding: 20px;
+    box-sizing: border-box;
+    background: rgba(0,0,0,0.9);
+  }
+  #tool-view .ad {
+    background: #111;
+    text-align: center;
+    padding: 10px;
+    margin: 10px auto;
+    color: #ccc;
+    border-radius: 8px;
     max-width: 1100px;
-    margin: 0 auto 60px;
-    background: #222;
-    border-radius: 15px;
-    overflow: hidden;
-    box-shadow: 0 0 20px #007bffcc;
+    box-shadow: 0 0 15px #007bffcc;
   }
-
-  iframe {
+  #tool-frame {
     width: 100%;
-    height: 600px;
+    height: 70vh;
     border: none;
+    border-radius: 12px;
+    max-width: 1100px;
+    margin: 10px auto;
+    display: block;
+    box-shadow: 0 0 25px #00aaffaa;
   }
-
-  /* Share buttons */
-  .share-btn {
-    display: flex;
-    justify-content: center;
-    gap: 15px;
-    margin-bottom: 40px;
-  }
-
-  .share-btn a {
-    background-color: #007bff;
+  #back-btn {
+    display: block;
+    max-width: 1100px;
+    margin: 20px auto 40px;
+    background-color: #00aaff;
+    border: none;
+    padding: 14px 22px;
+    border-radius: 10px;
     color: white;
-    text-decoration: none;
-    padding: 12px 20px;
-    border-radius: 30px;
-    font-weight: 600;
+    font-size: 1.2rem;
+    cursor: pointer;
+    text-align: center;
+    box-shadow: 0 0 15px #007bff;
     transition: background-color 0.3s ease;
+    width: fit-content;
   }
-
-  .share-btn a:hover {
-    background-color: #005bb5;
+  #back-btn:hover {
+    background-color: #008ecc;
   }
-
   /* Responsive */
   @media(max-width: 768px) {
     .card-container {
@@ -129,53 +130,69 @@
     .card {
       width: 90%;
     }
+    #tool-frame {
+      height: 60vh;
+      width: 95vw;
+    }
   }
 </style>
 
 </head>
 <body>
-  <div class="overlay">
+  <div class="overlay" id="home-view">
     <header>
       <h1>Best Online Earning Tools</h1>
       <p>Click a tool below to open it and start earning now!</p>
     </header>
 
     <div class="card-container">
-      <div class="card" onclick="loadTool('https://89atm.me?code=1xac9s')">
+      <div class="card" onclick="openTool('https://89atm.me?code=1xac9s')">
         <h3>89ATM Tool</h3>
         <button>Open Tool</button>
       </div>
-      <div class="card" onclick="loadTool('https://22job.me/#/reg?i=V63250')">
+      <div class="card" onclick="openTool('https://22job.me/#/reg?i=V63250')">
         <h3>22Job Tool</h3>
         <button>Open Tool</button>
       </div>
-      <div class="card" onclick="loadTool('https://balama.vip/pages/login/register?promo_code=AD0A5B06')">
+      <div class="card" onclick="openTool('https://balama.vip/pages/login/register?promo_code=AD0A5B06')">
         <h3>Balama Tool</h3>
         <button>Open Tool</button>
       </div>
-      <div class="card" onclick="loadTool('https://www.taskm4u.com?code=7cwxtb')">
+      <div class="card" onclick="openTool('https://www.taskm4u.com?code=7cwxtb')">
         <h3>TaskM4U Tool</h3>
         <button>Open Tool</button>
       </div>
     </div>
-
-    <div id="iframe-container">
-      <iframe id="tool-frame" src="" title="Online Earning Tool"></iframe>
-    </div>
-
-    <div class="share-btn">
-      <a href="https://wa.me/?text=Try%20these%20earning%20tools%20now%20https://your-site.github.io" target="_blank" rel="noopener">Share on WhatsApp</a>
-      <a href="https://www.facebook.com/sharer/sharer.php?u=https://your-site.github.io" target="_blank" rel="noopener">Share on Facebook</a>
-      <a href="mailto:?subject=Earning Tools&body=Try these earning tools: https://your-site.github.io" target="_blank" rel="noopener">Share via Email</a>
-    </div>
   </div>
 
-  <script>
-    function loadTool(url) {
-      const iframe = document.getElementById('tool-frame');
-      iframe.src = url;
-      window.scrollTo({top: document.body.scrollHeight, behavior: 'smooth'});
-    }
-  </script>
+  <div id="tool-view">
+    <div class="ad">Ad Banner Top (ca-app-pub-8647986383572378/5183505883)</div>
+
+    <iframe id="tool-frame" src="" title="Online Earning Tool"></iframe>
+
+    <div class="ad">Ad Banner Bottom (ca-app-pub-8647986383572378/4386279596)</div>
+
+    <button id="back-btn" onclick="closeTool()">← Back to Home</button>
+  </div>
+
+<script>
+  function openTool(url) {
+    // Hide home and show tool view
+    document.getElementById('home-view').style.display = 'none';
+    document.getElementById('tool-view').style.display = 'block';
+    // Load iframe
+    document.getElementById('tool-frame').src = url;
+    // Scroll to top for smooth UX
+    window.scrollTo(0, 0);
+  }
+
+  function closeTool() {
+    // Hide tool view, show home
+    document.getElementById('tool-view').style.display = 'none';
+    document.getElementById('home-view').style.display = 'block';
+    // Clear iframe src to stop loading
+    document.getElementById('tool-frame').src = '';
+  }
+</script>
 </body>
-          </html>
+  </html>
