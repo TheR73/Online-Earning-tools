@@ -1,90 +1,181 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <meta name="description" content="Access the latest online earning tools in one place. Try these apps and earn easily with our recommended tools.">
-  <meta name="keywords" content="online earning, task tools, GPT earning, money online, earn daily, rewards">
-  <meta name="author" content="YourSiteName">
-  <title>Earn Money Online | Best Tools</title>
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      background: #f0f2f5;
-      margin: 0;
-      padding: 0;
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta name="description" content="Best online earning tools all in one place. Easily access 89ATM, 22Job, Balama, and TaskM4U with one click." />
+<meta name="keywords" content="online earning, make money online, GPT tools, earn money apps, rewards, task apps" />
+<meta name="author" content="YourSiteName" />
+<title>Online Earning Tools - Easy Access to Best Money Apps</title>
+
+<style>
+  body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin:0; padding:0;
+    background: url('https://images.unsplash.com/photo-1504384308090-c894fdcc538d?auto=format&fit=crop&w=1470&q=80') no-repeat center center fixed;
+    background-size: cover;
+    color: #fff;
+  }
+
+  .overlay {
+    background: rgba(0,0,0,0.75);
+    min-height: 100vh;
+    padding: 40px 20px;
+    box-sizing: border-box;
+  }
+
+  header {
+    text-align: center;
+    margin-bottom: 40px;
+  }
+  header h1 {
+    font-size: 2.8rem;
+    margin-bottom: 10px;
+  }
+  header p {
+    font-size: 1.2rem;
+    color: #ddd;
+  }
+
+  .card-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    max-width: 1100px;
+    margin: 0 auto 40px;
+  }
+
+  .card {
+    background: #1e1e1ecc;
+    width: 220px;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 0 12px #007bffcc;
+    text-align: center;
+    cursor: pointer;
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+  }
+
+  .card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 0 20px #00aaff;
+  }
+
+  .card h3 {
+    margin: 0 0 15px;
+    font-size: 1.4rem;
+    color: #00aaff;
+  }
+
+  .card button {
+    background-color: #00aaff;
+    border: none;
+    padding: 10px 16px;
+    border-radius: 8px;
+    font-size: 1rem;
+    color: white;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+
+  .card button:hover {
+    background-color: #008ecc;
+  }
+
+  #iframe-container {
+    max-width: 1100px;
+    margin: 0 auto 60px;
+    background: #222;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 0 20px #007bffcc;
+  }
+
+  iframe {
+    width: 100%;
+    height: 600px;
+    border: none;
+  }
+
+  /* Share buttons */
+  .share-btn {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-bottom: 40px;
+  }
+
+  .share-btn a {
+    background-color: #007bff;
+    color: white;
+    text-decoration: none;
+    padding: 12px 20px;
+    border-radius: 30px;
+    font-weight: 600;
+    transition: background-color 0.3s ease;
+  }
+
+  .share-btn a:hover {
+    background-color: #005bb5;
+  }
+
+  /* Responsive */
+  @media(max-width: 768px) {
+    .card-container {
+      flex-direction: column;
+      align-items: center;
     }
-    header {
-      background-color: #007bff;
-      color: white;
-      padding: 20px;
-      text-align: center;
+    .card {
+      width: 90%;
     }
-    .container {
-      max-width: 1100px;
-      margin: 30px auto;
-      padding: 10px;
-    }
-    .tool {
-      background-color: white;
-      border-radius: 12px;
-      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-      margin-bottom: 30px;
-      overflow: hidden;
-    }
-    iframe {
-      width: 100%;
-      height: 600px;
-      border: none;
-    }
-    .share-btn {
-      display: flex;
-      justify-content: center;
-      gap: 10px;
-      margin: 30px 0;
-    }
-    .share-btn a {
-      text-decoration: none;
-      background: #007bff;
-      color: white;
-      padding: 10px 16px;
-      border-radius: 8px;
-      font-weight: bold;
-    }
-  </style>
+  }
+</style>
+
 </head>
 <body>
-  <header>
-    <h1>Online Earning Tools</h1>
-    <p>Access earning apps directly from one place!</p>
-  </header>
+  <div class="overlay">
+    <header>
+      <h1>Best Online Earning Tools</h1>
+      <p>Click a tool below to open it and start earning now!</p>
+    </header>
 
-  <div class="container">
-    <div class="tool">
-      <h2 style="text-align:center;">89ATM Tool</h2>
-      <iframe src="https://89atm.me?code=1xac9s"></iframe>
+    <div class="card-container">
+      <div class="card" onclick="loadTool('https://89atm.me?code=1xac9s')">
+        <h3>89ATM Tool</h3>
+        <button>Open Tool</button>
+      </div>
+      <div class="card" onclick="loadTool('https://22job.me/#/reg?i=V63250')">
+        <h3>22Job Tool</h3>
+        <button>Open Tool</button>
+      </div>
+      <div class="card" onclick="loadTool('https://balama.vip/pages/login/register?promo_code=AD0A5B06')">
+        <h3>Balama Tool</h3>
+        <button>Open Tool</button>
+      </div>
+      <div class="card" onclick="loadTool('https://www.taskm4u.com?code=7cwxtb')">
+        <h3>TaskM4U Tool</h3>
+        <button>Open Tool</button>
+      </div>
     </div>
 
-    <div class="tool">
-      <h2 style="text-align:center;">22Job Tool</h2>
-      <iframe src="https://22job.me/#/reg?i=V63250"></iframe>
-    </div>
-
-    <div class="tool">
-      <h2 style="text-align:center;">Balama Tool</h2>
-      <iframe src="https://balama.vip/pages/login/register?promo_code=AD0A5B06"></iframe>
-    </div>
-
-    <div class="tool">
-      <h2 style="text-align:center;">TaskM4U Tool</h2>
-      <iframe src="https://www.taskm4u.com?code=7cwxtb"></iframe>
+    <div id="iframe-container">
+      <iframe id="tool-frame" src="" title="Online Earning Tool"></iframe>
     </div>
 
     <div class="share-btn">
-      <a href="https://wa.me/?text=Try%20these%20earning%20tools%20now%20https://your-site.github.io" target="_blank">Share on WhatsApp</a>
-      <a href="https://www.facebook.com/sharer/sharer.php?u=https://your-site.github.io" target="_blank">Share on Facebook</a>
-      <a href="mailto:?subject=Earning Tools&body=Try these earning tools: https://your-site.github.io" target="_blank">Share via Email</a>
+      <a href="https://wa.me/?text=Try%20these%20earning%20tools%20now%20https://your-site.github.io" target="_blank" rel="noopener">Share on WhatsApp</a>
+      <a href="https://www.facebook.com/sharer/sharer.php?u=https://your-site.github.io" target="_blank" rel="noopener">Share on Facebook</a>
+      <a href="mailto:?subject=Earning Tools&body=Try these earning tools: https://your-site.github.io" target="_blank" rel="noopener">Share via Email</a>
     </div>
   </div>
+
+  <script>
+    function loadTool(url) {
+      const iframe = document.getElementById('tool-frame');
+      iframe.src = url;
+      window.scrollTo({top: document.body.scrollHeight, behavior: 'smooth'});
+    }
+  </script>
 </body>
-</html>
+          </html>
